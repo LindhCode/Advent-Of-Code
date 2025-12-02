@@ -9,7 +9,8 @@ def code_crack(file):
         print(i)
         number += (int(i[1:]) if i.startswith("R") else -int(i[1:]))
         if  number > 99:
-            if previous_number != 0 or number > 100:
+            print(number)
+            if previous_number != 0 or number > 99:
                 counter += (number // 100)
             print("counter 1+: " + str(counter))
             number = number % 100
@@ -17,7 +18,7 @@ def code_crack(file):
                 counter -= 1
             print(number)
         elif number < 0:
-            if previous_number != 0 or number < -100:
+            if previous_number != 0 or number < -99:
                 counter += (abs(number) // 100) + 1
             print("counter 1-: " + str(counter))
             number = number % 100
@@ -31,4 +32,4 @@ def code_crack(file):
         previous_number = number
     return counter
 
-print(code_crack("data.txt"))
+print(code_crack("test.txt"))
