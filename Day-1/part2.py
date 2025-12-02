@@ -15,6 +15,8 @@ def code_crack(file):
             number = number % 100
             print(f"Over 99: {counter}")
         elif number < 0:
+            #Problem: Om det passerar 0, räknas inte +1
+            # om number är ex -12
             passed_border = True
             #counter += 1
             counter += (abs(number) // 100)
